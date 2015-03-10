@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title">RNA-seq template</ui:insert></title>
+
+        <!--<meta name="Description" content="FCT01 by SymiSun* is an open source XHTML 1.0 and CSS valid template, released under the creative commons license." />
+        <meta name="Keywords" content="symisun, symisun*, free css template, valid xhtml template, open source template, free xhtml template, ftc01, symisun 01" />
+        -->
+        <meta http-equiv="imagetoolbar" content="no" /><!-- disable IE's image toolbar -->
+        <!--<link rel="stylesheet" media="screen" href="css/style.css" /> -->
+        <link href="#{facesContext.externalContext.requestContextPath}/resources/css/style.css" rel="stylesheet" type="text/css" />
+    </h:head>
+
+    <h:body>
+        <div id="daddy">
+
+            <div id="header">
+                <div id="logo">
+                    <a href="./"><img src="#{facesContext.externalContext.requestContextPath}/resources/images/logo.gif" alt="Your Company Logo" width="318" height="85" /></a><span id="logo-text"><a href="./">RNAseq logo</a></span>
+                </div>
+                <div id="menu">
+                    <ul>
+                        <li><h:link value="Home" outcome="index"/></li>
+                        <li><h:link value="Workgroups" outcome="index"/></li>
+                        <li><h:link value="Projects" outcome="index"/></li>
+                        <li><h:link value="Tools" outcome="index"/></li>
+                        <li><h:link value="Public Datasets" outcome="index"/></li>
+                        <li><h:link value="Contact" outcome="index"/></li>
+                    </ul>
+                </div>
+                <div id="logincontrol">
+                    <h:form>
+                        <h:panelGrid styleClass="loginPanel" columns="5" >
+                            <h:outputText value="Username: "/>
+                            <h:inputText value="username"/>
+                            <h:outputText value="Password: "/>
+                            <h:inputSecret value="password"/>
+                            <h:commandButton id="logInButton" action="index" class="login" value="Log In"/>
+                        </h:panelGrid>
+                    </h:form>
+                </div>
+                <div id="headerimage">
+                    <div id="download">
+                        <h:form>
+                            <span id="download-text">Not yet an user?<br/><h:link value="Register for free!" outcome="index"></h:link></span>
+                        </h:form>
+                    </div>
+                    <div id="icons">
+                        <a href="./" ><img src="#{facesContext.externalContext.requestContextPath}/resources/images/icon_home.gif" alt="Home" width="13" height="13" id="home" /></a>
+                        <a href="./"><img src="#{facesContext.externalContext.requestContextPath}/resources/images/icon_sitemap.gif" alt="Sitemap" width="13" height="13" id="sitemap" /></a>
+                        <a href="./"><img src="#{facesContext.externalContext.requestContextPath}/resources/images/icon_contact.gif" alt="Contact" width="13" height="13" id="contact" /></a>			
+                    </div>
+                    <div id="slogan">
+                        Our cute super slogan
+                    </div>
+                </div><!-- headerimage end -->
+            </div><!-- header end -->
+            <div id="content">
+                <div id="cA">
+                    <div class="Ctopleft"></div>
+                    <h3>SEARCH</h3>
+                    <div id="search">
+                        <h:form>
+                            <h:inputText value="search.."/><h:commandButton value="Submit" class="submit" action="index"/>
+                        </h:form>
+                    </div><!-- search end -->
+                    <p>&nbsp;</p>
+                    <h3>TOOLS</h3>
+                    <div id="tools">
+                        <ul>
+                            <li><p class=""><strong>Quality Control</strong></p></li>
+                            <ul>
+                                <li><p class="testimonial">Tool 1</p></li>
+                                <li><p class="testimonial">Tool 2</p></li>
+                                <li><p class="testimonial">Tool 3</p></li>
+                            </ul>
+                            <li><p class=""><strong>Assembly</strong></p></li>
+                            <ul>
+                                <li><p class="testimonial">Tool 1</p></li>
+                                <li><p class="testimonial">Tool 2</p></li>
+                                <li><p class="testimonial">Tool 3</p></li>
+                            </ul>
+                            <li><p class=""><strong>Annotation</strong></p></li>
+                            <ul>
+                                <li><p class="testimonial">Tool 1</p></li>
+                                <li><p class="testimonial">Tool 2</p></li>
+                                <li><p class="testimonial">Tool 3</p></li>
+                            </ul>
+                            <li><p class=""><strong>Downstream Analysis</strong></p></li>
+                            <ul>
+                                <li><p class="testimonial">Tool 1</p></li>
+                                <li><p class="testimonial">Tool 2</p></li>
+                                <li><p class="testimonial">Tool 3</p></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <br/>
+                    <br/>
+                </div><!-- cA end -->
+                <div id="cB">
+                    <div class="Ctopright"></div>
+                    <div id="cB1">
+                        <h3>About RNAseq</h3>
+                        <div class="news">
+                            <p>RNAseq is wondrous tool for performing assembly and annotation of de novo organisms.</p>
+                        </div>
+                        <div class="news">
+                            <p>Our aim is to get this project £1 000 000 funding to help develop it as industry-level software.</p>
+                        </div>
+                    </div><!-- cB1 end -->
+                    <div id="cB2">
+                        <h3>Workflow History</h3>
+                        <div id="hiddenDiv" class="about">
+                            be invisible until needed
+                            <ul>
+                                <li><div id="job">
+                                        <p>Jobname1</p>
+                                        <p>some description</p>
+                                        <p>ongoing or finished</p>
+                                    </div></li>
+                                <li><div id="job">
+                                        <p>Jobname2</p>
+                                        <p>some description</p>
+                                        <p>ongoing or finished</p>
+                                    </div></li>
+                                <li><div id="job">
+                                        <p>Jobname3</p>
+                                        <p>some description</p>
+                                        <p>ongoing or finished</p>
+                                    </div></li>
+                                <li><div id="job">
+                                        <p>Jobname4</p>
+                                        <p>some description</p>
+                                        <p>ongoing or finished</p>
+                                    </div></li>
+                            </ul>
+                        </div>
+                    </div><!-- cB2 end -->
+                </div><!-- cB -->
+                <div class="Cpad">
+                    <br class="clear" /><div class="Cbottomleft"></div><div class="Cbottom"></div><div class="Cbottomright"></div>
+                </div><!-- Cpad end -->
+            </div><!-- content end -->
+            <div id="properspace"></div><!-- properspace -->
+        </div><!-- daddy end -->    
+        <div id="footer">
+            <div id="foot">
+                <div id="foot1">
+                    <br/>
+                </div><!-- foot1 end -->
+                <div id="foot2">
+                    <span class="valid">Original design by <a href="http://www.symisun.com/" title="We digitalize your ambitions">SymiSun<span class="star">*</span></a></span>Copyright 2015, RNAseq Team 
+                </div><!-- foot1 end -->
+            </div><!-- foot end -->
+        </div><!-- footer end -->
+    </h:body>
+
+</html>
