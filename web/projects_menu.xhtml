@@ -10,7 +10,7 @@
         <ui:composition template="./Templates/SymiSunNoWFnoTools.xhtml">
 
             <ui:define name="title">
-                RNAseq &ndash; Workgroups menu
+                RNAseq &ndash; Projects menu
             </ui:define>
 
             <ui:define name="loginMenu">
@@ -25,32 +25,34 @@
             </ui:define>
 
             <ui:define name="center">
-                <h3>Workgroups Menu</h3>
+                <h3>Projects Menu</h3>
                 <div class="news">
-                    <h4>Your workgroups</h4>
+                    <h4>Your projects</h4>
                     <br/>
                     <h:form>
                         <ul>
-                            <li><p><h:link value="Workgroup 1" outcome="workgroup"/></p></li>
-                            <li><p>Workgroup 2</p></li>
-                            <li><p>Workgroup 3</p></li>
-                            <li><p>Workgroup 4</p></li>
+                            <li><p><h:link value="Project 1" outcome="project"/> &ndash; <h:link value=" [Workgroup 1]" outcome="workgroup"/></p></li>
+                            <li><p>Project 2 [Workgroup 2]</p></li>
+                            <li><p>Project 3 [Workgroup 3]</p></li>
+                            <li><p>Project 4 [Workgroup 4]</p></li>
                         </ul>
                     </h:form>
                 </div>
                 <div class="news">
                     <h:form>
-                        <h:commandButton id="openCreateWkDial" onclick="PF('createWkDial').show();
-                                return false;" class="workMenuButtons" value="Create Workgroup"/>
+                        <h:commandButton id="openCreateWkDial" onclick="PF('createProjectDial').show();
+                                return false;" class="workMenuButtons" value="Create Project"/>
                     </h:form>
                 </div>
 
-                <p:dialog resizable="false" minHeight="80" header="Create Workgroup" widgetVar="createWkDial" modal="true">
-                    <h3>Create new workgroup</h3>
+                <p:dialog resizable="false" minHeight="80" header="Create Project" widgetVar="createProjectDial" modal="true">
+                    <h3>Create new project</h3>
                     <h:form>
+                        <h:outputText value="Project name"/><br/>
+                        <h:inputText class="regInput" value="projectname"/><br/>
                         <h:outputText value="Workgroup name"/><br/>
-                        <h:inputText class="regInput" value="name"/><br/>
-                        <h:commandButton id="addWorkgroupButton" action="workgroups_menu" class="workMenuButtons" value="Create"/>
+                        <h:inputText class="regInput" value="workgroupname"/><br/>
+                        <h:commandButton id="createProjectButton" action="projects_menu" class="workMenuButtons" value="Create"/>
                     </h:form>
                 </p:dialog>
             </ui:define>

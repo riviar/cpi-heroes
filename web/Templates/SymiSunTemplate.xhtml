@@ -26,31 +26,31 @@
                 </div>
                 <div id="menu">
                     <ul>
-                        <li><h:link value="Home" outcome="index"/></li>
-                        <li><h:link value="Workgroups" outcome="index"/></li>
-                        <li><h:link value="Projects" outcome="index"/></li>
+                        <li><h:link value="Home" outcome="home"/></li>
+                        <li><h:link value="Workgroups" outcome="workgroups_menu"/></li>
+                        <li><h:link value="Projects" outcome="projects_menu"/></li>
                         <li><h:link value="Tools" outcome="index"/></li>
                         <li><h:link value="Public Datasets" outcome="index"/></li>
                         <li><h:link value="Contact" outcome="index"/></li>
                     </ul>
                 </div>
-                <div id="logincontrol">
-                    <h:form>
-                        <h:panelGrid styleClass="loginPanel" columns="5" >
-                            <h:outputText value="Username: "/>
-                            <h:inputText value="username"/>
-                            <h:outputText value="Password: "/>
-                            <h:inputSecret value="password"/>
-                            <h:commandButton id="logInButton" action="home" class="login" value="Log In"/>
-                        </h:panelGrid>
-                    </h:form>
-                </div>
-                <div id="headerimage">
-                    <div id="registerLink">
+                <ui:insert name="loginMenu">
+                    <div id="logincontrol">
                         <h:form>
-                            <span id="download-text">Not yet an user?<br/><h:link value="Register for free!" outcome="register"></h:link></span>
+                            <h:panelGrid styleClass="loginPanel" columns="5" >
+                                <h:outputText value="Username: "/>
+                                <h:inputText value="username"/>
+                                <h:outputText value="Password: "/>
+                                <h:inputSecret value="password"/>
+                                <h:commandButton id="logInButton" action="home" class="login" value="Log In"/>
+                            </h:panelGrid>
                         </h:form>
                     </div>
+                </ui:insert>
+                <div id="headerimage">
+                    <ui:insert name="registerLink">
+                    
+                    </ui:insert>
                     <div id="slogan">
                         Our cute super slogan
                     </div>
@@ -107,7 +107,6 @@
                         <div id="cB2">
                             <h3>Workflow History</h3>
                             <div id="hiddenDiv" class="about">
-                                be invisible until needed
                                 <ul>
                                     <li><div id="job">
                                             <p>Jobname1</p>
