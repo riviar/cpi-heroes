@@ -41,7 +41,7 @@
                 <div class="news">
                     <h:form>
                         <h:commandButton id="openCreateWkDial" onclick="PF('createWkDial').show();
-                                return false;" class="workMenuButtons" value="Create Workgroup"/>
+                                return false;" class="centerButton" value="Create Workgroup"/>
                     </h:form>
                 </div>
 
@@ -49,8 +49,8 @@
                     <h3>Create new workgroup</h3>
                     <h:form>
                         <h:outputText value="Workgroup name"/><br/>
-                        <h:inputText class="regInput" value="name"/><br/>
-                        <h:commandButton id="addWorkgroupButton" action="workgroups_menu" class="workMenuButtons" value="Create"/>
+                        <p:inputText class="regInput" value="name"/><br/>
+                        <h:commandButton id="addWorkgroupButton" action="workgroups_menu" class="centerButton" value="Create"/>
                     </h:form>
                 </p:dialog>
             </ui:define>

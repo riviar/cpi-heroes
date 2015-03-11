@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./Templates/SymiSunTemplate.xhtml">
+
+            <ui:define name="title">
+                RNAseq &ndash; Data Item
+            </ui:define>
+
+            <ui:define name="loginMenu">
+                <div id="logincontrol">
+                    <h:form>
+                        <h:panelGrid styleClass="loginPanel" columns="2" >
+                            <h:outputText value="Logged in as {user} "/>
+                            <h:commandButton id="logInButton" action="index" class="login" value="Log Out"/>
+                        </h:panelGrid>
+                    </h:form>
+                </div>
+            </ui:define>
+
+            <ui:define name="center">
+                <h3>{dataset name}</h3>
+                <br/>
+                <div class="news">
+                    <h4>Uploaded or Output of tool {tool} with params:</h4>
+                    <br/>
+                    <h:panelGrid columns="3">
+                        <h:outputText value="Param 1"/>
+                        &ndash;
+                        <h:outputText value="paramvalue"/>
+                        <h:outputText value="Param 2"/>
+                        &ndash;
+                        <h:outputText value="paramvalue"/>
+                        <h:outputText value="Param 3"/>
+                        &ndash;
+                        <h:outputText value="paramvalue"/>
+                        <h:outputText value="Param 4"/>
+                        &ndash;
+                        <h:outputText value="paramvalue"/>
+                        <h:outputText value="Param 5"/>
+                        &ndash;
+                        <h:outputText value="paramvalue"/>
+                    </h:panelGrid>
+                </div>
+                <div class="news">
+                    Content depending on data type, graphs/statistics/etc
+                </div>
+                <div class="news">
+                    <h:panelGrid columns="2">
+                    <h:form>
+                        <h:commandButton id="downloadButton" action="data_item" class="centerButton" value="Download"/>
+                        <h:commandButton id="makePublicButton" action="data_item" class="centerButton" value="Make Public"/>
+                    </h:form>
+                    </h:panelGrid>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

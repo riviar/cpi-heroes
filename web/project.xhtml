@@ -42,7 +42,7 @@
                 <div class="news">
                     <h:form>
                         <h:commandButton id="openAddDatasetDialog" onclick="PF('addDatasetDialog').show();
-                                return false;" class="workMenuButtons" value="Upload Dataset"/>
+                                return false;" class="centerButton" value="Upload Dataset"/>
                     </h:form>
                 </div>
 
@@ -51,7 +51,7 @@
                     <h:form enctype="multipart/form-data">  
                         <p:messages showDetail="true"/>  
                         <p:fileUpload value="file" />  
-                        <p:commandButton value="Submit" ajax="false" actionListener="backendaction"/>  
+                        <h:commandButton value="Submit" class="centerButton" actionListener="backendaction"/>  
                     </h:form>  
                 </p:dialog>
                 

@@ -38,7 +38,7 @@
                 </div>
                 <div class="news">
                     <h:form>
-                        <h:commandButton id="openAddMemberDialog" onclick="PF('addMemberDialog').show(); return false;" class="workMenuButtons" value="Add Member"/>
+                        <h:commandButton id="openAddMemberDialog" onclick="PF('addMemberDialog').show(); return false;" class="centerButton" value="Add Member"/>
                     </h:form>
                 </div>
                 <div class="news">
@@ -53,7 +53,7 @@
                 </div>
                 <div class="news">
                     <h:form>
-                        <h:commandButton id="openCreateProjectDialog" onclick="PF('createProjectDialog').show(); return false;" class="workMenuButtons" value="Create Project"/>
+                        <h:commandButton id="openCreateProjectDialog" onclick="PF('createProjectDialog').show(); return false;" class="centerButton" value="Create Project"/>
                     </h:form>
                 </div>
                 
@@ -61,8 +61,8 @@
                     <h3>Add new member</h3>
                     <h:form>
                         <h:outputText value="User name"/><br/>
-                        <h:inputText class="regInput" value="name"/><br/>
-                        <h:commandButton id="addMemberButton" action="workgroup" class="workMenuButtons" value="Add"/>
+                        <p:inputText class="regInput" value="name"/><br/>
+                        <h:commandButton id="addMemberButton" action="workgroup" class="centerButton" value="Add"/>
                     </h:form>
                 </p:dialog>
                 
@@ -70,8 +70,8 @@
                     <h3>Create new project</h3>
                     <h:form>
                         <h:outputText value="Project name"/><br/>
-                        <h:inputText class="regInput" value="name"/><br/>
-                        <h:commandButton id="createProjectButton" action="workgroup" class="workMenuButtons" value="Create"/>
+                        <p:inputText class="regInput" value="name"/><br/>
+                        <h:commandButton id="createProjectButton" action="workgroup" class="centerButton" value="Create"/>
                     </h:form>
                 </p:dialog>
             </ui:define>

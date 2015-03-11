@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -39,9 +40,9 @@
                         <h:form>
                             <h:panelGrid styleClass="loginPanel" columns="5" >
                                 <h:outputText value="Username: "/>
-                                <h:inputText value="username"/>
+                                <p:inputText value="username"/>
                                 <h:outputText value="Password: "/>
-                                <h:inputSecret value="password"/>
+                                <p:password value="password"/>
                                 <h:commandButton id="logInButton" action="home" class="login" value="Log In"/>
                             </h:panelGrid>
                         </h:form>

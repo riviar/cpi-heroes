@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./Templates/SymiSunTemplate.xhtml">
+
+            <ui:define name="title">
+                RNAseq &ndash; New Job
+            </ui:define>
+
+            <ui:define name="loginMenu">
+                <div id="logincontrol">
+                    <h:form>
+                        <h:panelGrid styleClass="loginPanel" columns="2" >
+                            <h:outputText value="Logged in as {user} "/>
+                            <h:commandButton id="logInButton" action="index" class="login" value="Log Out"/>
+                        </h:panelGrid>
+                    </h:form>
+                </div>
+            </ui:define>
+
+            <ui:define name="center">
+                <h3>{toolname}</h3>
+                <br/>
+                <h:form>
+                    <div class="news">
+                        <h:outputText value="Job Name"/><br/>
+                        <p:inputText class="regInput" value="defaultname"/>
+                    </div>
+                    <div class="news">
+                        <h:outputText value="Input file"/><br/>
+                        <p:selectOneMenu class="regInput" value="tool" style="width: 200px">
+                            <f:selectItem itemLabel="Select input file" itemValue="" noSelectionOption="true" />
+                            <f:selectItems value="#{MockLists.inputs}"/>
+                        </p:selectOneMenu>
+                    </div>
+                    <div class="news">
+                        <h4>Parameters</h4><br/>
+                        <h:outputText value="Param 1"/><br/>
+                        <p:inputText class="regInput" value="paramvalue"/><br/>
+                        <h:outputText value="Param 2"/><br/>
+                        <p:inputText class="regInput" value="paramvalue"/><br/>
+                        <h:outputText value="Param 3"/><br/>
+                        <p:inputText class="regInput" value="paramvalue"/><br/>
+                        <h:outputText value="Param 4"/><br/>
+                        <p:inputText class="regInput" value="paramvalue"/><br/>
+                        <h:outputText value="Param 5"/><br/>
+                        <p:inputText class="regInput" value="paramvalue"/><br/>
+                    </div>
+                    <div class="news">
+                        <h:commandButton value="Submit" class="centerButton" action="project"/>
+                    </div>
+                </h:form>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

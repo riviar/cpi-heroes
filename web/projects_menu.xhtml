@@ -41,7 +41,7 @@
                 <div class="news">
                     <h:form>
                         <h:commandButton id="openCreateWkDial" onclick="PF('createProjectDial').show();
-                                return false;" class="workMenuButtons" value="Create Project"/>
+                                return false;" class="centerButton" value="Create Project"/>
                     </h:form>
                 </div>
 
@@ -49,10 +49,10 @@
                     <h3>Create new project</h3>
                     <h:form>
                         <h:outputText value="Project name"/><br/>
-                        <h:inputText class="regInput" value="projectname"/><br/>
+                        <p:inputText class="regInput" value="projectname"/><br/>
                         <h:outputText value="Workgroup name"/><br/>
-                        <h:inputText class="regInput" value="workgroupname"/><br/>
-                        <h:commandButton id="createProjectButton" action="projects_menu" class="workMenuButtons" value="Create"/>
+                        <p:inputText class="regInput" value="workgroupname"/><br/>
+                        <p:commandButton id="createProjectButton" action="projects_menu" class="centerButton" value="Create"/>
                     </h:form>
                 </p:dialog>
             </ui:define>
