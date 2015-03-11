@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title">RNA-seq template</ui:insert></title>
+
+        <!--<meta name="Description" content="FCT01 by SymiSun* is an open source XHTML 1.0 and CSS valid template, released under the creative commons license." />
+        <meta name="Keywords" content="symisun, symisun*, free css template, valid xhtml template, open source template, free xhtml template, ftc01, symisun 01" />
+        -->
+        <meta http-equiv="imagetoolbar" content="no" /><!-- disable IE's image toolbar -->
+        <!--<link rel="stylesheet" media="screen" href="css/style.css" /> -->
+        <link href="#{facesContext.externalContext.requestContextPath}/resources/css/style.css" rel="stylesheet" type="text/css" />
+    </h:head>
+
+    <h:body>
+        <div id="daddy">
+
+            <div id="header">
+                <div id="logo">
+                    <h:link outcome="index" ><h:graphicImage library="images" width="318" height="85" alt="RNAseq" name="logo.gif" /></h:link><span id="logo-text"><h:link value="RNAseq logo" outcome="index"/></span>
+                </div>
+                <div id="menu">
+                    <ul>
+                        <li><h:link value="Home" outcome="home"/></li>
+                        <li><h:link value="Workgroups" outcome="workgroups_menu"/></li>
+                        <li><h:link value="Projects" outcome="projects_menu"/></li>
+                        <li><h:link value="Tools" outcome="index"/></li>
+                        <li><h:link value="Public Datasets" outcome="index"/></li>
+                        <li><h:link value="Contact" outcome="index"/></li>
+                    </ul>
+                </div>
+                <ui:insert name="loginMenu">
+                    <div id="logincontrol">
+                        <h:form>
+                            <h:panelGrid styleClass="loginPanel" columns="5" >
+                                <h:outputText value="Username: "/>
+                                <p:inputText value="username"/>
+                                <h:outputText value="Password: "/>
+                                <p:password value="password"/>
+                                <h:commandButton id="logInButton" action="home" class="login" value="Log In"/>
+                            </h:panelGrid>
+                        </h:form>
+                    </div>
+                </ui:insert>
+                <div id="headerimage">
+                    <ui:insert name="registerLink">
+                    
+                    </ui:insert>
+                    <div id="slogan">
+                        Our cute super slogan
+                    </div>
+                </div><!-- headerimage end -->
+            </div><!-- header end -->
+            <div id="content">
+                <div id="cB">
+                    <div class="Ctopright"></div>
+                    <div id="cB1">
+                        <ui:insert name="center">Center text</ui:insert>
+                    </div><!-- cB1 end -->
+                </div><!-- cB -->
+                <div class="Cpad">
+                    <br class="clear" /><div class="Cbottomleft"></div><div class="Cbottom"></div><div class="Cbottomright"></div>
+                </div><!-- Cpad end -->
+            </div><!-- content end -->
+            <div id="properspace"></div><!-- properspace -->
+        </div><!-- daddy end -->    
+        <div id="footer">
+            <div id="foot">
+                <div id="foot1">
+                    <br/>
+                </div><!-- foot1 end -->
+                <div id="foot2">
+                    <span class="valid">Original design by <a href="http://www.symisun.com/" title="We digitalize your ambitions">SymiSun<span class="star">*</span></a></span>Copyright 2015, RNAseq Team 
+                </div><!-- foot1 end -->
+            </div><!-- foot end -->
+        </div><!-- footer end -->
+    </h:body>
+
+</html>

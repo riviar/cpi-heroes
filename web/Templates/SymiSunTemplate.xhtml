@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -22,13 +23,13 @@
 
             <div id="header">
                 <div id="logo">
-                    <a href="./"><img src="#{facesContext.externalContext.requestContextPath}/resources/images/logo.gif" alt="Your Company Logo" width="318" height="85" /></a><span id="logo-text"><a href="./">RNAseq logo</a></span>
+                    <h:link outcome="index" ><h:graphicImage library="images" width="318" height="85" alt="RNAseq" name="logo.gif" /></h:link><span id="logo-text"><h:link value="RNAseq logo" outcome="index"/></span>
                 </div>
                 <div id="menu">
                     <ul>
-                        <li><h:link value="Home" outcome="index"/></li>
-                        <li><h:link value="Workgroups" outcome="index"/></li>
-                        <li><h:link value="Projects" outcome="index"/></li>
+                        <li><h:link value="Home" outcome="home"/></li>
+                        <li><h:link value="Workgroups" outcome="workgroups_menu"/></li>
+                        <li><h:link value="Projects" outcome="projects_menu"/></li>
                         <li><h:link value="Tools" outcome="index"/></li>
                         <li><h:link value="Public Datasets" outcome="index"/></li>
                         <li><h:link value="Contact" outcome="index"/></li>
@@ -69,38 +70,40 @@
                     <h3>SEARCH</h3>
                     <div id="search">
                         <h:form>
-                            <h:inputText value="search.."/><h:commandButton value="Submit" class="submit" action="index"/>
+                            <p:inputText value="search.."/><h:commandButton value="Submit" class="submit" action="index"/>
                         </h:form>
                     </div><!-- search end -->
                     <p>&nbsp;</p>
                     <h3>TOOLS</h3>
                     <div id="tools">
-                        <ul>
-                            <li><p class=""><strong>Quality Control</strong></p></li>
+                        <h:form>
                             <ul>
-                                <li><p class="testimonial">Tool 1</p></li>
-                                <li><p class="testimonial">Tool 2</p></li>
-                                <li><p class="testimonial">Tool 3</p></li>
+                                <li><p class=""><strong>Quality Control</strong></p></li>
+                                <ul>
+                                    <li><p class="subtool"><h:link value="Tool 1" outcome="new_job"/></p></li>
+                                    <li><p class="subtool">Tool 2</p></li>
+                                    <li><p class="subtool">Tool 3</p></li>
+                                </ul>
+                                <li><p class=""><strong>Assembly</strong></p></li>
+                                <ul>
+                                    <li><p class="subtool">Tool 1</p></li>
+                                    <li><p class="subtool">Tool 2</p></li>
+                                    <li><p class="subtool">Tool 3</p></li>
+                                </ul>
+                                <li><p class=""><strong>Annotation</strong></p></li>
+                                <ul>
+                                    <li><p class="subtool">Tool 1</p></li>
+                                    <li><p class="subtool">Tool 2</p></li>
+                                    <li><p class="subtool">Tool 3</p></li>
+                                </ul>
+                                <li><p class=""><strong>Downstream Analysis</strong></p></li>
+                                <ul>
+                                    <li><p class="subtool">Tool 1</p></li>
+                                    <li><p class="subtool">Tool 2</p></li>
+                                    <li><p class="subtool">Tool 3</p></li>
+                                </ul>
                             </ul>
-                            <li><p class=""><strong>Assembly</strong></p></li>
-                            <ul>
-                                <li><p class="testimonial">Tool 1</p></li>
-                                <li><p class="testimonial">Tool 2</p></li>
-                                <li><p class="testimonial">Tool 3</p></li>
-                            </ul>
-                            <li><p class=""><strong>Annotation</strong></p></li>
-                            <ul>
-                                <li><p class="testimonial">Tool 1</p></li>
-                                <li><p class="testimonial">Tool 2</p></li>
-                                <li><p class="testimonial">Tool 3</p></li>
-                            </ul>
-                            <li><p class=""><strong>Downstream Analysis</strong></p></li>
-                            <ul>
-                                <li><p class="testimonial">Tool 1</p></li>
-                                <li><p class="testimonial">Tool 2</p></li>
-                                <li><p class="testimonial">Tool 3</p></li>
-                            </ul>
-                        </ul>
+                        </h:form>
                     </div>
                     <br/>
                     <br/>
@@ -108,42 +111,39 @@
                 <div id="cB">
                     <div class="Ctopright"></div>
                     <div id="cB1">
-                        <h3>About RNAseq</h3>
-                        <div class="news">
-                            <p>RNAseq is wondrous tool for performing assembly and annotation of de novo organisms.</p>
-                        </div>
-                        <div class="news">
-                            <p>Our aim is to get this project £1 000 000 funding to help develop it as industry-level software.</p>
-                        </div>
+                        <ui:insert name="center">Center text</ui:insert>
                     </div><!-- cB1 end -->
-                    <div id="cB2">
-                        <h3>Workflow History</h3>
-                        <div id="hiddenDiv" class="about">
-                            be invisible until needed
-                            <ul>
-                                <li><div id="job">
-                                        <p>Jobname1</p>
-                                        <p>some description</p>
-                                        <p>ongoing or finished</p>
-                                    </div></li>
-                                <li><div id="job">
-                                        <p>Jobname2</p>
-                                        <p>some description</p>
-                                        <p>ongoing or finished</p>
-                                    </div></li>
-                                <li><div id="job">
-                                        <p>Jobname3</p>
-                                        <p>some description</p>
-                                        <p>ongoing or finished</p>
-                                    </div></li>
-                                <li><div id="job">
-                                        <p>Jobname4</p>
-                                        <p>some description</p>
-                                        <p>ongoing or finished</p>
-                                    </div></li>
-                            </ul>
-                        </div>
-                    </div><!-- cB2 end -->
+                    <ui:insert name="workflowHistory">
+                        <div id="cB2">
+                            <h3>Workflow History</h3>
+                            <div id="hiddenDiv" class="about">
+                                <h:form>
+                                <ul>
+                                    <li><div id="job">
+                                            <p><h:link value="Jobname1" outcome="data_item"/></p>
+                                            <p>some description</p>
+                                            <p>ongoing or finished</p>
+                                        </div></li>
+                                    <li><div id="job">
+                                            <p>Jobname2</p>
+                                            <p>some description</p>
+                                            <p>ongoing or finished</p>
+                                        </div></li>
+                                    <li><div id="job">
+                                            <p>Jobname3</p>
+                                            <p>some description</p>
+                                            <p>ongoing or finished</p>
+                                        </div></li>
+                                    <li><div id="job">
+                                            <p>Jobname4</p>
+                                            <p>some description</p>
+                                            <p>ongoing or finished</p>
+                                        </div></li>
+                                </ul>
+                                </h:form>
+                            </div>
+                        </div><!-- cB2 end -->
+                    </ui:insert>
                 </div><!-- cB -->
                 <div class="Cpad">
                     <br class="clear" /><div class="Cbottomleft"></div><div class="Cbottom"></div><div class="Cbottomright"></div>

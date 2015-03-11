@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./Templates/SymiSunNoWFnoTools.xhtml">
+
+            <ui:define name="title">
+                RNAseq &ndash; Workgroup
+            </ui:define>
+
+            <ui:define name="loginMenu">
+                <div id="logincontrol">
+                    <h:form>
+                        <h:panelGrid styleClass="loginPanel" columns="2" >
+                            <h:outputText value="Logged in as {user} "/>
+                            <h:commandButton id="logInButton" action="index" class="login" value="Log Out"/>
+                        </h:panelGrid>
+                    </h:form>
+                </div>
+            </ui:define>
+
+            <ui:define name="center">
+                <h3>Workgroup {workgroup}</h3>
+                <div class="news">
+                    <h4>Members:</h4>
+                    <br/>
+                    <ul>
+                        <li><p>Member 1</p></li>
+                        <li><p>Member 2</p></li>
+                        <li><p>Member 3</p></li>
+                        <li><p>Member 4</p></li>
+                    </ul>
+                </div>
+                <div class="news">
+                    <h:form>
+                        <h:commandButton id="openAddMemberDialog" onclick="PF('addMemberDialog').show(); return false;" class="centerButton" value="Add Member"/>
+                    </h:form>
+                </div>
+                <div class="news">
+                    <h4>Projects:</h4>
+                    <br/>
+                    <ul>
+                        <li><p>Project 1</p></li>
+                        <li><p>Project 2</p></li>
+                        <li><p>Project 3</p></li>
+                        <li><p>Project 4</p></li>
+                    </ul>
+                </div>
+                <div class="news">
+                    <h:form>
+                        <h:commandButton id="openCreateProjectDialog" onclick="PF('createProjectDialog').show(); return false;" class="centerButton" value="Create Project"/>
+                    </h:form>
+                </div>
+                
+                <p:dialog resizable="false" minHeight="80" header="Add Member" widgetVar="addMemberDialog" modal="true">
+                    <h3>Add new member</h3>
+                    <h:form>
+                        <h:outputText value="User name"/><br/>
+                        <p:inputText class="regInput" value="name"/><br/>
+                        <h:commandButton id="addMemberButton" action="workgroup" class="centerButton" value="Add"/>
+                    </h:form>
+                </p:dialog>
+                
+                <p:dialog resizable="false" minHeight="80" header="Create Project" widgetVar="createProjectDialog" modal="true">
+                    <h3>Create new project</h3>
+                    <h:form>
+                        <h:outputText value="Project name"/><br/>
+                        <p:inputText class="regInput" value="name"/><br/>
+                        <h:commandButton id="createProjectButton" action="workgroup" class="centerButton" value="Create"/>
+                    </h:form>
+                </p:dialog>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

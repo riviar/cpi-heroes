@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./Templates/SymiSunNoWFnoTools.xhtml">
+
+            <ui:define name="title">
+                RNAseq &ndash; Home
+            </ui:define>
+
+            <ui:define name="loginMenu">
+                <div id="logincontrol">
+                    <h:form>
+                        <h:panelGrid styleClass="loginPanel" columns="2" >
+                            <h:outputText value="Logged in as {user} "/>
+                            <h:commandButton id="logInButton" action="index" class="login" value="Log Out"/>
+                        </h:panelGrid>
+                    </h:form>
+                </div>
+            </ui:define>
+
+            <ui:define name="center">
+                <h3>Home</h3>
+                <div class="news">
+                    I welcome you, young user.<br/>
+                    Shall we uncover secrets of some organisms genetics?
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./Templates/SymiSunNoWFnoTools.xhtml">
+
+            <ui:define name="title">
+                RNAseq &ndash; Workgroups menu
+            </ui:define>
+
+            <ui:define name="loginMenu">
+                <div id="logincontrol">
+                    <h:form>
+                        <h:panelGrid styleClass="loginPanel" columns="2" >
+                            <h:outputText value="Logged in as {user} "/>
+                            <h:commandButton id="logInButton" action="index" class="login" value="Log Out"/>
+                        </h:panelGrid>
+                    </h:form>
+                </div>
+            </ui:define>
+
+            <ui:define name="center">
+                <h3>Workgroups Menu</h3>
+                <div class="news">
+                    <h4>Your workgroups</h4>
+                    <br/>
+                    <h:form>
+                        <ul>
+                            <li><p><h:link value="Workgroup 1" outcome="workgroup"/></p></li>
+                            <li><p>Workgroup 2</p></li>
+                            <li><p>Workgroup 3</p></li>
+                            <li><p>Workgroup 4</p></li>
+                        </ul>
+                    </h:form>
+                </div>
+                <div class="news">
+                    <h:form>
+                        <h:commandButton id="openCreateWkDial" onclick="PF('createWkDial').show();
+                                return false;" class="centerButton" value="Create Workgroup"/>
+                    </h:form>
+                </div>
+
+                <p:dialog resizable="false" minHeight="80" header="Create Workgroup" widgetVar="createWkDial" modal="true">
+                    <h3>Create new workgroup</h3>
+                    <h:form>
+                        <h:outputText value="Workgroup name"/><br/>
+                        <p:inputText class="regInput" value="name"/><br/>
+                        <h:commandButton id="addWorkgroupButton" action="workgroups_menu" class="centerButton" value="Create"/>
+                    </h:form>
+                </p:dialog>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

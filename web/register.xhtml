@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./Templates/SymiSunNoWFnoTools.xhtml">
+
+            <ui:define name="title">
+                RNAseq &ndash; Registration
+            </ui:define>
+
+            <ui:define name="registerLink">
+                <div id="registerFloater">
+                    <h:form>
+                        <span id="download-text">Not yet an user?<br/><h:link value="Register for free!" outcome="register"></h:link></span>
+                    </h:form>
+                </div>
+            </ui:define>
+
+            <ui:define name="center">
+                <h3>Registration</h3>
+                <div class="news">
+                    <p>Please fill form below to register</p>
+                </div>
+                <h:form>
+                    <div class="news">
+                        <h:outputText value="Name"/><br/>
+                        <p:inputText class="regInput" value="name"/><br/>
+                        <h:outputText value="Surname"/><br/>
+                        <p:inputText class="regInput" value="surname"/><br/>
+                        <h:outputText value="Email"/><br/>
+                        <p:inputText class="regInput" value="email"/><br/>
+                    </div>
+                    <div class="news">
+                        <h:outputText value="Username"/><br/>
+                        <p:inputText class="regInput" value="username"/><br/>
+                        <h:outputText value="Password"/><br/>
+                        <p:inputText class="regInput" value="password"/><br/>
+                    </div>
+                    <div class="news">
+                        <h:commandButton id="registerButton" action="index" class="centerButton" value="Register"/>
+                    </div>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
