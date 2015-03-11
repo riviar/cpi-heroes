@@ -76,7 +76,7 @@ h5 {font-size:10px}
 #logincontrols:after {content:"."; display:block; height:0; clear:both; visibility:hidden}
 #headerimage {width:998px; height:233px; background:url('../images/bg_header.jpg') no-repeat top left; float:left; position:relative}
 #slogan {color:#000; font:normal 20px arial,serif; position:absolute; bottom:35px; left:320px}
-#download {width:189px; height:59px; margin:128px 0 0 0; background:url('../images/download.gif') no-repeat top left; float:left}
+#registerFloater {width:189px; height:59px; margin:128px 0 0 0; background:url('../images/download.gif') no-repeat top left; float:left}
 #download-text {color:#fff; font:bold 15px/22px arial,serif; width:187px; display:block; text-align:center; padding:8px 2px 0 0}
 #icons {width:97px; height:90px; background:url('../images/bg_icon_lines.gif') no-repeat top right; margin:126px 0 0 0; float:right}
 #home {width:13px; height:13px; margin:30px 7px 0 0; float:right}
@@ -84,8 +84,8 @@ h5 {font-size:10px}
 #contact {width:13px; height:13px; margin:76px 7px 0 0; float:right}
 /* Header links */
 #logo a {font-weight:normal}
-#download a {color:#fff; display:block; height:51px}
-#download a:hover, #logo a:hover {text-decoration:none; color:#ddd}
+#registerFloater a {color:#fff; display:block; height:51px}
+#registerFloater a:hover, #logo a:hover {text-decoration:none; color:#ddd}
 /* Login control panel */
 .loginPanel { float: right }
 

@@ -22,7 +22,7 @@
 
             <div id="header">
                 <div id="logo">
-                    <a href="./"><img src="#{facesContext.externalContext.requestContextPath}/resources/images/logo.gif" alt="Your Company Logo" width="318" height="85" /></a><span id="logo-text"><a href="./">RNAseq logo</a></span>
+                    <h:link outcome="index" ><h:graphicImage library="images" width="318" height="85" alt="RNAseq" name="logo.gif" /></h:link><span id="logo-text"><h:link value="RNAseq logo" outcome="index"/></span>
                 </div>
                 <div id="menu">
                     <ul>
@@ -41,20 +41,15 @@
                             <h:inputText value="username"/>
                             <h:outputText value="Password: "/>
                             <h:inputSecret value="password"/>
-                            <h:commandButton id="logInButton" action="index" class="login" value="Log In"/>
+                            <h:commandButton id="logInButton" action="home" class="login" value="Log In"/>
                         </h:panelGrid>
                     </h:form>
                 </div>
                 <div id="headerimage">
-                    <div id="download">
+                    <div id="registerLink">
                         <h:form>
                             <span id="download-text">Not yet an user?<br/><h:link value="Register for free!" outcome="register"></h:link></span>
                         </h:form>
-                    </div>
-                    <div id="icons">
-                        <a href="./" ><img src="#{facesContext.externalContext.requestContextPath}/resources/images/icon_home.gif" alt="Home" width="13" height="13" id="home" /></a>
-                        <a href="./"><img src="#{facesContext.externalContext.requestContextPath}/resources/images/icon_sitemap.gif" alt="Sitemap" width="13" height="13" id="sitemap" /></a>
-                        <a href="./"><img src="#{facesContext.externalContext.requestContextPath}/resources/images/icon_contact.gif" alt="Contact" width="13" height="13" id="contact" /></a>			
                     </div>
                     <div id="slogan">
                         Our cute super slogan
