@@ -36,7 +36,8 @@ h5 {font-size:10px}
 /* Forms */
 .submit {font:bold 12px verdana,serif; cursor:pointer!important; color:#1c4851; background:none; border:none; width:60px; margin:0 0 0 6px}
 .login {font:bold 12px verdana,serif; cursor:pointer!important; color:#ccc; background:none; border:none; width:60px; margin:0 0 0 6px}
-.centerButton {font:bold 16px verdana,serif; cursor:pointer!important; color:#404040; background:none; border:none; width:85px; margin:6px 6px 6px 15px}
+.registerButton {font:bold 16px verdana,serif; cursor:pointer!important; color:#404040; background:none; border:none; width:85px; margin:6px 6px 6px 15px}
+.workMenuButtons {font:bold 12px verdana,serif; cursor:pointer!important; color:#103C20; background:none; border:none; width: auto; margin:0 0 0 6px}
 .regInput { margin:5px 0 5px 15px}
 .radio {margin:0 5px 0 0; background:none; border:none}
 .search {
