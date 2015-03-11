@@ -38,19 +38,21 @@
                     <h:form>
                         <h:panelGrid styleClass="loginPanel" columns="5" >
                             <h:outputText value="Username: "/>
-                            <h:inputText value="username"/>
+                            <h:inputText value="#{authenticationBean.newUser.username}"/>
                             <h:outputText value="Password: "/>
-                            <h:inputSecret value="password"/>
-                            <h:commandButton id="logInButton" action="index" class="login" value="Log In"/>
+                            <h:inputSecret value="#{authenticationBean.newUser.password}"/>
+                            <h:commandButton id="logInButton" action="#{authenticationBean.loginUser()}" class="login" value="Log In"/>
                         </h:panelGrid>
                     </h:form>
                 </div>
                 <div id="headerimage">
-                    <div id="download">
-                        <h:form>
-                            <span id="download-text">Not yet an user?<br/><h:link value="Register for free!" outcome="index"></h:link></span>
-                        </h:form>
-                    </div>
+                    <c:if test="#{authenticationBean.loggedIn}">
+                        <div id="download">
+                            <h:form>                                
+                                <span id="download-text">Not yet an user?<br/><h:link value="Register for free!" outcome="register"></h:link></span>
+                            </h:form>
+                        </div>
+                    </c:if>
                     <div id="icons">
                         <a href="./" ><img src="#{facesContext.externalContext.requestContextPath}/resources/images/icon_home.gif" alt="Home" width="13" height="13" id="home" /></a>
                         <a href="./"><img src="#{facesContext.externalContext.requestContextPath}/resources/images/icon_sitemap.gif" alt="Sitemap" width="13" height="13" id="sitemap" /></a>
