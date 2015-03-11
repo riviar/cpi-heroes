@@ -26,7 +26,7 @@
                 </div>
                 <div id="menu">
                     <ul>
-                        <li><h:link value="Home" outcome="index"/></li>
+                        <li><h:link value="Home" outcome="home"/></li>
                         <li><h:link value="Workgroups" outcome="index"/></li>
                         <li><h:link value="Projects" outcome="index"/></li>
                         <li><h:link value="Tools" outcome="index"/></li>
@@ -62,82 +62,11 @@
                 </div><!-- headerimage end -->
             </div><!-- header end -->
             <div id="content">
-                <div id="cA">
-                    <div class="Ctopleft"></div>
-                    <h3>SEARCH</h3>
-                    <div id="search">
-                        <h:form>
-                            <h:inputText value="search.."/><h:commandButton value="Submit" class="submit" action="index"/>
-                        </h:form>
-                    </div><!-- search end -->
-                    <p>&nbsp;</p>
-                    <h3>TOOLS</h3>
-                    <div id="tools">
-                        <ul>
-                            <li><p class=""><strong>Quality Control</strong></p></li>
-                            <ul>
-                                <li><p class="subtool">Tool 1</p></li>
-                                <li><p class="subtool">Tool 2</p></li>
-                                <li><p class="subtool">Tool 3</p></li>
-                            </ul>
-                            <li><p class=""><strong>Assembly</strong></p></li>
-                            <ul>
-                                <li><p class="subtool">Tool 1</p></li>
-                                <li><p class="subtool">Tool 2</p></li>
-                                <li><p class="subtool">Tool 3</p></li>
-                            </ul>
-                            <li><p class=""><strong>Annotation</strong></p></li>
-                            <ul>
-                                <li><p class="subtool">Tool 1</p></li>
-                                <li><p class="subtool">Tool 2</p></li>
-                                <li><p class="subtool">Tool 3</p></li>
-                            </ul>
-                            <li><p class=""><strong>Downstream Analysis</strong></p></li>
-                            <ul>
-                                <li><p class="subtool">Tool 1</p></li>
-                                <li><p class="subtool">Tool 2</p></li>
-                                <li><p class="subtool">Tool 3</p></li>
-                            </ul>
-                        </ul>
-                    </div>
-                    <br/>
-                    <br/>
-                </div><!-- cA end -->
                 <div id="cB">
                     <div class="Ctopright"></div>
                     <div id="cB1">
                         <ui:insert name="center">Center text</ui:insert>
                     </div><!-- cB1 end -->
-                    <ui:insert name="workflowHistory">
-                        <div id="cB2">
-                            <h3>Workflow History</h3>
-                            <div id="hiddenDiv" class="about">
-                                be invisible until needed
-                                <ul>
-                                    <li><div id="job">
-                                            <p>Jobname1</p>
-                                            <p>some description</p>
-                                            <p>ongoing or finished</p>
-                                        </div></li>
-                                    <li><div id="job">
-                                            <p>Jobname2</p>
-                                            <p>some description</p>
-                                            <p>ongoing or finished</p>
-                                        </div></li>
-                                    <li><div id="job">
-                                            <p>Jobname3</p>
-                                            <p>some description</p>
-                                            <p>ongoing or finished</p>
-                                        </div></li>
-                                    <li><div id="job">
-                                            <p>Jobname4</p>
-                                            <p>some description</p>
-                                            <p>ongoing or finished</p>
-                                        </div></li>
-                                </ul>
-                            </div>
-                        </div><!-- cB2 end -->
-                    </ui:insert>
                 </div><!-- cB -->
                 <div class="Cpad">
                     <br class="clear" /><div class="Cbottomleft"></div><div class="Cbottom"></div><div class="Cbottomright"></div>

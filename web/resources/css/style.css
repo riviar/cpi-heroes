@@ -36,6 +36,8 @@ h5 {font-size:10px}
 /* Forms */
 .submit {font:bold 12px verdana,serif; cursor:pointer!important; color:#1c4851; background:none; border:none; width:60px; margin:0 0 0 6px}
 .login {font:bold 12px verdana,serif; cursor:pointer!important; color:#ccc; background:none; border:none; width:60px; margin:0 0 0 6px}
+.register {font:bold 16px verdana,serif; cursor:pointer!important; color:#404040; background:none; border:none; width:85px; margin:6px 6px 6px 15px}
+.regInput { margin:5px 0 5px 15px}
 .radio {margin:0 5px 0 0; background:none; border:none}
 .search {
 	width:150px;
@@ -108,7 +110,7 @@ h5 {font-size:10px}
 #search {background:#a4c0ba; padding:10px 15px}
 #tools {background:#a4c0ba; padding:10px 15px}
 #cA img {padding:4px; border:1px solid #d3cfce; margin:4px 7px 0 0}
-.testimonial {padding:2px; font:normal 10px arial,sans-serif}
+.subtool {padding:2px; font:normal 10px arial,sans-serif}
 #cB {float:right; width:679px; margin:0 8px 0 0; display:inline}
 .Ctopright {background:url('../images/corners_top.gif') no-repeat top right; width:9px; height:9px; overflow:hidden; float:right}
 #cB1 {width:340px; float:left; padding:0 10px 5px 10px}
