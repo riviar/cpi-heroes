@@ -14,10 +14,12 @@ import javax.persistence.Query;
 
 /**
  * Facade for managing login sessions
+ *
  * @author Matthew Robinson
  */
 @Stateful
 public class AccountSessionFacade extends AbstractFacade<Users> {
+
     @PersistenceContext(unitName = "RNAseqPU")
     private EntityManager em;
 
@@ -29,16 +31,37 @@ public class AccountSessionFacade extends AbstractFacade<Users> {
     public AccountSessionFacade() {
         super(Users.class);
     }
-    
+
     public Users loginUser(String username, String password) {
         Query q = em.createQuery("SELECT u FROM Users u WHERE u.username=:username AND u.password=:password");
         q.setParameter("username", username);
         q.setParameter("password", password);
         try {
-            return (Users)q.getSingleResult();
+            return (Users) q.getSingleResult();
         } catch (NoResultException ex) {
             return null;
         }
-    } 
-    
+    }
+
+    public boolean userExists(String username) {
+        Query q = em.createQuery("SELECT u FROM Users u WHERE u.username=:username AND u.password=:password");
+        q.setParameter("username", username);
+        try {
+            // return true if any record matching username is found in database
+            // can getSingleResult ever return null and not throw NoResultException?
+            if (q.getSingleResult() != null) {
+                return true;
+            }
+        } catch (NoResultException ex) {
+            return false;
+        }
+        // should never reach here, so trap with assert, but return true anyway as IDE complains otherwise
+        assert false;
+        return true;
+    }
+
+    public void registerUser(Users newUser) {
+        create(newUser);
+    }
+
 }

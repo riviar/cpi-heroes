@@ -6,7 +6,6 @@
 package managedbeans;
 
 import entitybeans.Users;
-import java.time.LocalDateTime;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -27,7 +26,7 @@ public class AuthenticationBean {
     AccountSessionFacade accountFacade;
 
     private Users newUser = new Users();
-    
+
     /**
      * Creates a new instance of AuthenticationBean
      */
@@ -37,28 +36,47 @@ public class AuthenticationBean {
     public void loginUser() {
         loginUser(newUser.getUsername(), newUser.getPassword());
     }
-    
+
     public void loginUser(String username, String password) {
+        // lookup username/password combination in database
         Users user = accountFacade.loginUser(username, password);
+        // if no matching user found, show error message
         if (user == null) {
-            FacesContext.getCurrentInstance().addMessage(null, 
+            FacesContext.getCurrentInstance().addMessage(null,
                     new FacesMessage("Incorrect login or password"));
         } else {
-            FacesContext.getCurrentInstance().addMessage(null, 
+            FacesContext.getCurrentInstance().addMessage(null,
                     new FacesMessage("Logged In Successfully!"));
+            // get current session
             HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
                     .getExternalContext().getSession(false);
+            // set user attribute of session
             session.setAttribute("user", user);
             newUser = user;
         }
     }
 
     public boolean isLoggedIn() {
-        LocalDateTime time = LocalDateTime.now();
-        return (time.getMinute() % 2 == 0);
+        //gets current session
+        HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
+                .getExternalContext().getSession(false);
+        //returns true if user attribute for current session is not null
+        return (session.getAttribute("user") != null);        
     }
 
     public Users getNewUser() {
         return newUser;
+    }
+    
+    public void registerNewUser() {
+        String password = newUser.getPassword();
+        // check if user with specified login already exists
+        if (accountFacade.userExists(newUser.getUsername())) {
+            FacesContext.getCurrentInstance().addMessage(null,
+                    new FacesMessage("This username is already registered!"));
+        } else {
+            accountFacade.registerUser(newUser);
+            this.loginUser(newUser.getUsername(), newUser.getPassword());
+        }
     }
 }
