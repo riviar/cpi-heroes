@@ -37,9 +37,17 @@ public class AuthenticationBean {
         loginUser(newUser.getUsername(), newUser.getPassword());
     }
 
+    public Users getLoggedInUser() {
+        // get current session
+            HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
+                    .getExternalContext().getSession(false);
+            // set user attribute of session
+            return (Users)session.getAttribute("user");
+    }
+    
     public void loginUser(String username, String password) {
         // lookup username/password combination in database
-        Users user = accountFacade.loginUser(username, password);
+        Users user = accountFacade.checkUserLogin(username, password);
         // if no matching user found, show error message
         if (user == null) {
             FacesContext.getCurrentInstance().addMessage(null,
@@ -68,8 +76,19 @@ public class AuthenticationBean {
         return newUser;
     }
     
-    public void registerNewUser() {
-        String password = newUser.getPassword();
+    public void registerNewUser() {        
+        Users testuser = new Users();
+        testuser.setFirstname("testfirstname");
+        testuser.setLastname("testlastname");
+        testuser.setIdusers(4);
+        testuser.setUsername("staticuser");
+        testuser.setPassword("password");
+        accountFacade.registerUser(testuser);
+        System.out.println("newUser.firstname = " + newUser.getFirstname());
+        System.out.println("newUser.lastname = " + newUser.getLastname());
+        System.out.println("newUser.idusers = " + newUser.getIdusers());
+        System.out.println("newUser.password = " + newUser.getPassword());
+        System.out.println("newUser.username = " + newUser.getUsername());
         // check if user with specified login already exists
         if (accountFacade.userExists(newUser.getUsername())) {
             FacesContext.getCurrentInstance().addMessage(null,
