@@ -6,7 +6,10 @@
 package sessionbeans;
 
 import entitybeans.Users;
+import java.security.MessageDigest;
 import javax.ejb.Stateful;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
@@ -32,10 +35,28 @@ public class AccountSessionFacade extends AbstractFacade<Users> {
         super(Users.class);
     }
 
-    public Users loginUser(String username, String password) {
+    public String hashPassword(String password) {
+        try {
+            MessageDigest sha = MessageDigest.getInstance("SHA-512");
+            byte[] hash = sha.digest(password.getBytes("UTF-8"));
+            StringBuilder hashedPassword = new StringBuilder();
+            for (int i = 0; i< hash.length; i++) {
+                String hex = Integer.toHexString(0xff & hash[i]);
+                if (hex.length() == 1) hashedPassword.append('0');
+                hashedPassword.append(hex);
+            }
+            return hashedPassword.toString();
+        } catch (Exception ex) {
+            FacesContext.getCurrentInstance().addMessage(null,
+                    new FacesMessage("Error in hashing password!"));
+        }
+        return null;
+    }
+    
+    public Users checkUserLogin(String username, String password) {
         Query q = em.createQuery("SELECT u FROM Users u WHERE u.username=:username AND u.password=:password");
         q.setParameter("username", username);
-        q.setParameter("password", password);
+        q.setParameter("password", hashPassword(password));
         try {
             return (Users) q.getSingleResult();
         } catch (NoResultException ex) {
@@ -44,7 +65,7 @@ public class AccountSessionFacade extends AbstractFacade<Users> {
     }
 
     public boolean userExists(String username) {
-        Query q = em.createQuery("SELECT u FROM Users u WHERE u.username=:username AND u.password=:password");
+        Query q = em.createQuery("SELECT u FROM Users u WHERE u.username=:username");
         q.setParameter("username", username);
         try {
             // return true if any record matching username is found in database
@@ -61,6 +82,8 @@ public class AccountSessionFacade extends AbstractFacade<Users> {
     }
 
     public void registerUser(Users newUser) {
+        String hashedPassword = hashPassword(newUser.getPassword());
+        newUser.setPassword(hashedPassword);
         create(newUser);
     }
 
