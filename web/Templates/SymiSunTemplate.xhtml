@@ -35,23 +35,18 @@
                         <li><h:link value="Contact" outcome="index"/></li>
                     </ul>
                 </div>
-                <ui:insert name="loginMenu">
-                    <div id="logincontrol">
-                        <h:form>
-                            <h:panelGrid styleClass="loginPanel" columns="5" >
-                                <h:outputText value="Username: "/>
-                                <p:inputText value="username"/>
-                                <h:outputText value="Password: "/>
-                                <p:password value="password"/>
-                                <h:commandButton id="logInButton" action="home" class="login" value="Log In"/>
-                            </h:panelGrid>
-                        </h:form>
-                    </div>
-                </ui:insert>
+                <div id="logincontrol">
+                    <h:form>
+                        <h:panelGrid styleClass="loginPanel" columns="5" >
+                            <h:outputText value="Username: "/>
+                            <h:inputText value="#{authenticationBean.newUser.username}"/>
+                            <h:outputText value="Password: "/>
+                            <h:inputSecret value="#{authenticationBean.newUser.password}"/>
+                            <h:commandButton id="logInButton" action="#{authenticationBean.loginUser()}" class="login" value="Log In"/>
+                        </h:panelGrid>
+                    </h:form>
+                </div>
                 <div id="headerimage">
-                    <ui:insert name="registerLink">
-
-                    </ui:insert>
                     <div id="slogan">
                         Our cute super slogan
                     </div>
